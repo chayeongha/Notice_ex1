@@ -26,7 +26,7 @@
   		<div class="form-group">
   		<h2>NOTICE WRITE PAGE</h2>
 			</div>
-		<form  action="./noticeWriteResult.jsp" method="get">
+		<form  action="./noticeWriteResult.jsp" method="post">
    				
    				 <div class="form-group">
      				 	<label for="writer">WRITER:</label>

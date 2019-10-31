@@ -19,7 +19,7 @@
     
     //DAO객체
     
-    NoticeDAO noticeDAO = new NoticeDAO();
+   NoticeDAO noticeDAO = new NoticeDAO();
     
     Connection con =  DBConnector.getConnection();
     
@@ -28,6 +28,10 @@
     con.close();
     
     String msg="등록실패";
+    
+    //test
+    
+    // int result =0;
     
     if(result >0){
     	

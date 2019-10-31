@@ -40,7 +40,7 @@ public class NoticeDAOTest {
 	
 }
 	
-	/* @Test */
+	@Test 
 	public void noticeWrite()throws Exception{
 		
 		NoticeDAO noticeDAO = new NoticeDAO();
@@ -52,17 +52,17 @@ public class NoticeDAOTest {
 			
 				noticeDTO.setWriter("gd");
 				noticeDTO.setTitle("dfsf");
-				noticeDTO.setHit(0);
 				noticeDTO.setContents("dfdf");
 				
-				noticeDAO.noticeWrite(con, noticeDTO);
+	 int result =	noticeDAO.noticeWrite(con, noticeDTO);
 		
 		
-				con.close();
+				assertEquals(1, result);
 		}
 				
 				
 	
+	/* public void noticeUpdate() {} */
 	
 	 
 	 
