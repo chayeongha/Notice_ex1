@@ -14,7 +14,7 @@ public class MemberDAO {
 		
 		int result =0;
 		
-		//SQL문
+		//SQL문이요
 		
 		String sql="insert into login values(?,?,?,?,?,?) "; 
 		
