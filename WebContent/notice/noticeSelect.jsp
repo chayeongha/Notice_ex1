@@ -4,6 +4,9 @@
 <%@page import="com.cyh.notice.NoticeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   
+   
+    <%@ include file="../index.jsp" %>
     
     <%
     request.setCharacterEncoding("UTF-8");

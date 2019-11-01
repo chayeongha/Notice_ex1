@@ -1,5 +1,24 @@
+
+<%@page import="com.cyh.member.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@ include file="../index.jsp" %>
+    	
+    	<%
+    		if(memberDTO == null || memberDTO.getGrade() !=0){
+    			request.setAttribute("msg", " 권한없음.");
+    			request.setAttribute("path", "../member/memberLogin.jsp");
+    			RequestDispatcher rd= request.getRequestDispatcher("../common/common_result.jsp");
+    			rd.forward(request, response);
+    			
+    			
+    		}
+    	%>
+    
+   
+   
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,13 +26,7 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-.container {
-	width: 500px;
-	height: 600px;
-	background-color: silver;
-	margin: 0 auto;
 
-}
 
 
 </style>
@@ -30,11 +43,11 @@
    				
    				 <div class="form-group">
      				 	<label for="writer">WRITER:</label>
-   				 		<input type="text" class="form-control" id="writer" placeholder="Enter Writer" name="writer">
+   				 		<input type="text" class="form-control" id="writer" placeholder="Enter Writer" name="writer"readonly="readonly" value="<%=memberDTO.getId() %>">
     			</div>
     			<div class="form-group">
       					<label for="title">TITLE:</label>
-      					<input type="text" class="form-control" id="title" placeholder="Enter Title" name="title">
+      					<input type="text" class="form-control" id="title" placeholder="Enter Title" name="title" >
     			</div>
     			
     			<div class="form-group">
@@ -45,8 +58,12 @@
     			
     			<div class="form-group">
   				  <button type="submit" class="btn btn-default">Submit</button>
+  				
+  				
   				  
   				  <a href="./noticeList.jsp">List</a>
+  				  
+  				  
   				 </div>
   				  
 		</form>

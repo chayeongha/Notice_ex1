@@ -1,3 +1,4 @@
+<%@page import="com.cyh.member.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,8 +14,38 @@
 
 
 	<%@ include file="./layout/nav.jsp" %>
+	
 
+	
+	
+	<div class="container">
+		<% if(memberDTO != null) {%>
+			<h1> After Success Login</h1> 
+			<%}else { %>
+			<h1> Befor Login </h1>
+			<%} %>
+	</div>
 
+	<div class="container">
+		<%
+		Cookie[] cookies	=request.getCookies();
+		
+		for(int i=0; i<cookies.length; i++){
+			
+		%>
+		<h1>NAME:<%= cookies[i].getName() %></h1>
+		<h1>VALUE:<%= cookies[i].getValue() %></h1>
+		
+		
+		<% }%>
+			
+		<%
+				String name="iu";
+				out.print("<h1>"+name+"</h1>");
+		%>
+	
+	</div>
+	
 
 </body>
 </html>

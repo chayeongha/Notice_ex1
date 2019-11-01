@@ -1,12 +1,22 @@
+<%@page import="com.cyh.member.MemberDTO"%>
+<%@page import="com.cyh.member.MemberDAO"%>
 <%@page import="com.cyh.notice.NoticeDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   
+    
+
     
      <%
     	NoticeDTO noticeDTO	=(NoticeDTO)request.getAttribute("dto");
+     
+   		 MemberDTO  memberDTO = new MemberDTO();
+
+		memberDTO=(MemberDTO) session.getAttribute("member");
     
     %>
     
+        
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,6 +41,8 @@
 </head>
 <body>
 			
+			
+			
 <h1>notice select page</h1>
 <div class="container">
 <table class="table">
@@ -53,8 +65,14 @@
 
 
 <div class="button">
+
+<%if(memberDTO != null && memberDTO.getId().equals(noticeDTO.getWriter())){ %>
 <a class="btn btn-danger" href="">Update</a>
 <a href="" class="btn btn-primary">Delete</a>
+<%} %>
+
+
+
 
 </div>
 
